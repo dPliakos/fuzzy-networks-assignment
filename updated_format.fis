@@ -1,0 +1,85 @@
+[System]
+Name='controller'
+Type='sugeno'
+Version=2.0
+NumInputs=4
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='variance'
+Range=[-10 10]
+NumMFs=3
+MF1='small':'trimf',[-10 -7.5 -5]
+MF2='medium':'trimf',[-5.1 0 5]
+MF3='big':'trimf',[5.1 7.5 10]
+
+[Input2]
+Name='skewness'
+Range=[-15 15]
+NumMFs=3
+MF1='small':'trimf',[-15 -10 -5]
+MF2='medium':'trimf',[-5.1 0 5]
+MF3='big':'trimf',[5.1 10 15]
+
+[Input3]
+Name='curtosis'
+Range=[-20 20]
+NumMFs=2
+MF1='small':'trimf',[-20 -10 0]
+MF2='big':'trimf',[0.1 10 20]
+
+[Input4]
+Name='imageentropy'
+Range=[-10 10]
+NumMFs=2
+MF1='small':'trimf',[-10 -5 0]
+MF2='big':'trimf',[0.1 5 10]
+
+[Output1]
+Name='authentic'
+Range=[0 30]
+NumMFs=2
+MF1='low':'constant',[10]
+MF2='high':'constant',[20]
+
+[Output2]
+Name='nonauthentic'
+Range=[0 30]
+NumMFs=2
+MF1='low':'constant',[10]
+MF2='high':'constant',[20]
+
+[Rules]
+1 1 1 1, 2 1 (1) : 2
+2 1 1 1, 2 1 (1) : 2
+1 2 1 1, 2 1 (0) : 2
+1 1 2 1, 2 1 (0) : 2
+1 1 1 2, 2 1 (1) : 2
+2 2 1 1, 2 1 (0) : 2
+1 2 2 1, 2 1 (0) : 2
+1 1 2 2, 2 1 (1) : 2
+2 1 1 2, 2 1 (1) : 2
+2 1 2 1, 2 1 (1) : 2
+1 2 1 2, 2 1 (1) : 2
+2 2 2 1, 1 2 (1) : 2
+1 2 2 2, 1 1 (0) : 2
+2 1 2 2, 1 2 (1) : 2
+2 2 1 2, 1 2 (0) : 2
+2 2 2 2, 1 2 (0) : 2
+3 1 1 1, 2 1 (0) : 2
+3 2 1 1, 1 1 (0) : 2
+3 1 2 1, 1 1 (0) : 2
+3 1 1 2, 1 2 (1) : 2
+3 2 1 1, 1 1 (1) : 2
+3 2 2 1, 1 2 (1) : 2
+3 2 2 2, 1 2 (1) : 2
+3 3 1 1, 1 1 (0) : 2
+3 3 1 2, 1 2 (0) : 2
+3 3 2 2, 1 2 (0) : 2
+3 3 2 1, 1 2 (0) : 2

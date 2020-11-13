@@ -79,8 +79,11 @@ for i = 1:columns(result)
 end
 
 
+
 disp("rows(xtest):")
 rows(xtest)
 
 disp("count_true: ")
 count_true
+
+writefis(fis, "updated_format.fis")
