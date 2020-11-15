@@ -11,3 +11,6 @@ run:
 par:
 	time seq $N | parallel ./parallel/run_script.sh
 	python3 ./parallel/find-best.py
+
+data_review:
+	octave ./data-analysis/data-review.m
