@@ -45,15 +45,15 @@ MF2='big':'trimf',    [0.1 5 10]
 Name='authentic'
 Range=[0 30]
 NumMFs=2
-MF1='low':'constant', [10]
-MF2='high':'constant', [20]
+MF1='low':'constant', [0]
+MF2='high':'constant', [1]
 
 [Output2]
 Name='nonauthentic'
 Range=[0 30]
 NumMFs=2
-MF1='low':'constant', [10]
-MF2='high':'constant', [20]
+MF1='low':'constant', [0]
+MF2='high':'constant', [1]
 
 [Rules]
 1 1 1 1, 2 1 (1) : 2
@@ -76,7 +76,7 @@ MF2='high':'constant', [20]
 3 2 1 1, 1 1 (1) : 2
 3 1 2 1, 1 1 (1) : 2
 3 1 1 2, 1 2 (1) : 2
-3 2 1 1, 1 1 (1) : 2 
+3 2 1 1, 1 1 (1) : 2
 3 2 2 1, 1 2 (1) : 2
 3 2 2 2, 1 2 (1) : 2
 3 3 1 1, 1 1 (1) : 2
