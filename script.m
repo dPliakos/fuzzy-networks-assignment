@@ -21,7 +21,7 @@ xtest = x(train_length+1:rows(x),:);
 ttest = t(train_length+1:rows(x),:);
 
 # gia kathe lanthasmeno apatelsma
-max_epoch = 4;
+max_epoch = 10;
 max_error = 0.2;
 
 params = [];
