@@ -1,7 +1,7 @@
 % Calculates the model's evaluatino criteria
 % Returns a vector with [accuracy pressicion  recall f_measure sensitivity specificity]
 function eval_criteria = evaluate(tp, tn, fp, fn)
-  accuracy = (tp + tn) / tp + tn + fp + fn;
+  accuracy = (tp + tn) / (tp + tn + fp + fn);
 
   if (tp + fp) > 0,
     precision = tp / (tp + fp);

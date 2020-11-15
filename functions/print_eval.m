@@ -2,9 +2,10 @@
 % Param1: The name of the evaluated result
 % Param2: Vector with the counts of the result
 % Param3: vector with the evaluations of the  result
-function print_eval(name, vcounts, veval)
+function print_eval(name, error_rate, vcounts, veval)
   disp(["[", name, "]"]);
-  disp([name, "-", "Total number of patterns: ", mat2str(sum(vcounts))]);
+  disp([name, "-", "Total number of patterns: ", mat2str(error_rate)]);
+  disp([name, "-", "Error rate: ", mat2str(sum(vcounts))]);
   disp([name, "-", "tp: ", mat2str(vcounts(1))]);
   disp([name, "-", "tn: ", mat2str(vcounts(2))]);
   disp([name, "-", "fp: ", mat2str(vcounts(3))]);
