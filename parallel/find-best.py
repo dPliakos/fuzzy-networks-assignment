@@ -11,6 +11,9 @@ max_all_filename=""
 
 
 for filename in files:
+  if (filename == ".gitkeep"):
+    continue
+
   with open("output/"+filename, "r") as f:
     contents = f.read()
 
